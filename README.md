@@ -1,24 +1,48 @@
 # README
+## Verbatim X post related to this project
+Yesterday, I began working on Ruby on Rails (RoR) pet project for personal utility and came across 
+@paulearnden
+'s latest post about his #buildinginpublic project.[1]
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+And I was like, "hell yeah! Why not to share the update on my ongoing project in similar fashion?"
 
-Things you may want to cover:
+So, this is what I'm building: Stock Diary
 
-* Ruby version
+Background
+Apart from system developer, I'm a retail investor in the Indian stock market. And as you'd guess it, I'm a disciplined and system-oriented guy. I like to record my decisions whenever I make a transaction. I have written about my philosophy on decision-making a few years back.[2]
 
-* System dependencies
+So much so, that I ended up putting together a tiny Decision Journal on Gumroad. You don't need to purchase, just to develop the background here.[3]
 
-* Configuration
+When I began investing, I quickly setup a Google Sheet-based diary to note investment decisions. See the screenshot:
 
-* Database creation
 
-* Database initialization
+But now I need something more user-friendly.
+Google Sheets is good, but I want something more now. Namely:
+- Add relationships between stock decisions. This is completely absent right now.
+- Track the Buy/Sale of individual stocks on a single page. I can apply a filter now, but some dynamic calculations can't be carried out.
+- Add more decision-making factors, such as my mood, conscious/unconscious influencers, and referrers while making the decision.
 
-* How to run the test suite
+So, I just began building using #RubyOnRails. Since I already have been using 
+@rails
+ for some time now, I could straight away say:
 
-* Services (job queues, cache servers, search engines, etc.)
+rails new stockdiary
 
-* Deployment instructions
+And the rest of the things were smooth.
 
-* ...
+I'm using Bootstrap for CSS and let's see how these things go.
+
+For now, there will be two models: company and transaction. 
+
+The company stores the company info, while Transaction stores the company's transactions. They're in one-to-many relationships.
+
+Public sharing
+The initial idea was (and still is) to keep the project to myself for my use, but seeing the public building idea, if there is substantial interest from the community, I will make the Git Rep public.
+
+By the way, I built this in less than 30 minutes. (I know I'm slow by Rails OG's standard, but I'm enjoying this.)
+
+
+Footnotes:
+[1] Paul Earnden's post on his latest rails project: https://x.com/paulearnden/status/1799575307218796805 
+[2] A Powerful Trick to Improve Decision Making https://bhagyeshpathak.com/blog//a-powerful-trick-to-improve-decision-making-skills
+[3] Decision Diary-Key to Self-Mastery https://wuweied.gumroad.com/l/decisiondiary
