@@ -65,6 +65,6 @@ class CompaniesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def company_params
-      params.require(:company).permit(:name, :ticker_symbol)
+      params.require(:company).permit(:name, :ticker_symbol, transactions_attributes: [:company_id, :buy_sale, :quantity, :price_per_unit, :purchase_price, :total_spent, :total_earned, :transaction_fees, :date, :reason, :final_verdict, :_destroy])
     end
 end
