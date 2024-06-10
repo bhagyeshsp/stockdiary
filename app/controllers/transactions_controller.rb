@@ -1,5 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: %i[ show edit update destroy ]
+  before_action :set_company, only: [:new, :create]
 
   # GET /transactions or /transactions.json
   def index
@@ -12,7 +13,7 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/new
   def new
-    @transaction = Transaction.new
+    @transaction = @company.transactions.build
   end
 
   # GET /transactions/1/edit
@@ -21,7 +22,7 @@ class TransactionsController < ApplicationController
 
   # POST /transactions or /transactions.json
   def create
-    @transaction = Transaction.new(transaction_params)
+    @transaction = @company.transactions.build(transaction_params)
 
     respond_to do |format|
       if @transaction.save
@@ -62,6 +63,9 @@ class TransactionsController < ApplicationController
     def set_transaction
       @transaction = Transaction.find(params[:id])
     end
+
+    def set_company
+      @company = Company.find(params[:company_id])
 
     # Only allow a list of trusted parameters through.
     def transaction_params
