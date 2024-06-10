@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: one
+  buy_sale: MyString
+  quantity: 1
+  price_per_unit: 9.99
+  purchase_price: 9.99
+  total_spent: 9.99
+  total_earned: 9.99
+  transaction_fees: 9.99
+  date: 2024-06-10
+  reason: MyText
+  final_verdict: MyText
+
+two:
+  company: two
+  buy_sale: MyString
+  quantity: 1
+  price_per_unit: 9.99
+  purchase_price: 9.99
+  total_spent: 9.99
+  total_earned: 9.99
+  transaction_fees: 9.99
+  date: 2024-06-10
+  reason: MyText
+  final_verdict: MyText

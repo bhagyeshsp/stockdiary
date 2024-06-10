@@ -1,0 +1,72 @@
+<%= form_with(model: transaction) do |form| %>
+  <% if transaction.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+        <% transaction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :company_id, style: "display: block" %>
+    <%= form.text_field :company_id %>
+  </div>
+
+  <div>
+    <%= form.label :buy_sale, style: "display: block" %>
+    <%= form.text_field :buy_sale %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.label :price_per_unit, style: "display: block" %>
+    <%= form.text_field :price_per_unit %>
+  </div>
+
+  <div>
+    <%= form.label :purchase_price, style: "display: block" %>
+    <%= form.text_field :purchase_price %>
+  </div>
+
+  <div>
+    <%= form.label :total_spent, style: "display: block" %>
+    <%= form.text_field :total_spent %>
+  </div>
+
+  <div>
+    <%= form.label :total_earned, style: "display: block" %>
+    <%= form.text_field :total_earned %>
+  </div>
+
+  <div>
+    <%= form.label :transaction_fees, style: "display: block" %>
+    <%= form.text_field :transaction_fees %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :reason, style: "display: block" %>
+    <%= form.text_area :reason %>
+  </div>
+
+  <div>
+    <%= form.label :final_verdict, style: "display: block" %>
+    <%= form.text_area :final_verdict %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

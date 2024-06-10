@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Companies</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Company Name</th>
+      <th>Ticker</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.name %></td>
+        <td><%= company.ticker_symbol %></td>
+        <td><%= link_to 'Show', company %> | <%= link_to 'Edit', edit_company_path(company) %> | <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br> <br>
+<%= link_to "New company", new_company_path %>
