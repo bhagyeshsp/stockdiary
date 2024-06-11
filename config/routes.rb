@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
     resources :companies do
-      resources :transactions, only: [:new, :create]
+      resources :transactions
     end
   root "companies#index"
 end
