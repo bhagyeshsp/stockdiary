@@ -11,13 +11,13 @@
 </br></br></br>
 
 
-<h1>Company's Name: <%= @compnay.name %></h1>
+<%# <h1>Company's Name: <%= @company.name %>
 <h5> Associated transactions go here: </h5>
 <p><%= link_to 'Add Transaction', new_company_transaction_path(@company) %></p>
 
-<h2>Recorded Transactions</h2>
+<h6>Recorded Transactions</h6>
 
-  <table>
+  <table class="table">
   <tr>
     <th>Buy/Sale?</th>
     <th>Quantity</th>
