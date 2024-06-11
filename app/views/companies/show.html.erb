@@ -8,3 +8,46 @@
 
   <%= button_to "Destroy this company", @company, method: :delete %>
 </div>
+</br></br></br>
+
+
+<h1>Company's Name: <%= @compnay.name %></h1>
+<h5> Associated transactions go here: </h5>
+<p><%= link_to 'Add Transaction', new_company_transaction_path(@company) %></p>
+
+<h2>Recorded Transactions</h2>
+
+  <table>
+  <tr>
+    <th>Buy/Sale?</th>
+    <th>Quantity</th>
+    <th>Per unit price</th>
+    <th>Total spent</th>
+    <th>Total earned</th>
+    <th>Trx fees</th>
+    <th>Trx date</th>
+    <th>Reason</th>
+    <th>Verdict</th>
+    <th>Actions</th>
+  </tr>
+  
+  <%# * The next ruby code encapsulates the <tr> </tr> content to repeat those rows for each student entries  %>
+  <% @company.transactions.each do |transaction| %>
+  <tr>
+    <td><%= transaction.buy_sale %></td>
+    <td><%= transaction.quantity %></td>
+    <td><%= transaction.price_per_unit %></td>
+    <td><%= transaction.purchase_price %></td>
+    <td><%= transaction.total_spent %></td>
+    <td><%= transaction.total_earned %></td>
+    <td><%= transaction.transaction_fees %></td>
+    <td><%= transaction.date %></td>
+    <td><%= transaction.reason %></td>
+    <td><%= transaction.final_verdict %></td>
+    <td><%= link_to "Edit", edit_company_transaction_path(@company, transaction) %> </td>
+  </tr>
+  <% end %>
+  </table>
+
+
+
