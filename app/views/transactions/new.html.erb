@@ -1,5 +1,4 @@
 <h1>New transaction</h1>
 
 <%= render "form", transaction: @transaction %>
-
-<br>
+<%= link_to "Back to company", company_path(@transaction.company) %>

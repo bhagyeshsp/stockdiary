@@ -6,9 +6,9 @@
   <% @transactions.each do |transaction| %>
     <%= render transaction %>
     <p>
-      <%= link_to "Show this transaction", transaction %>
+      <%= link_to "Show this transaction", company_transaction_path(@company, transaction) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New transaction", new_transaction_path %>
+<%= link_to "Back to company", company_path(@company, @transaction) %>

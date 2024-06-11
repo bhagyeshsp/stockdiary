@@ -5,6 +5,6 @@
 <br>
 
 <div>
-  <%= link_to "Show this transaction", @transaction %> |
-  <%= link_to "Back to transactions", transactions_path %>
+<%= button_to "Destroy this transaction", [@transaction.company, @transaction], method: :delete %>  
+<%= link_to "Back to company", company_path(@transaction.company) %>
 </div>

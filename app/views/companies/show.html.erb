@@ -5,19 +5,13 @@
 <div>
   <%= link_to "Edit this company", edit_company_path(@company) %> |
   <%= link_to "Back to companies", companies_path %>
-
-  <%= button_to "Destroy this company", @company, method: :delete %>
+  <%= button_to "Destroy this company", @company, method: :delete, data: { confirm: "Are you sure you want to delete this company?" } %>
 </div>
 </br></br></br>
 
+<h1 class="display-6">Recorded Transactions</h1>
 
-<%# <h1>Company's Name: <%= @company.name %>
-<h5> Associated transactions go here: </h5>
-<p><%= link_to 'Add Transaction', new_company_transaction_path(@company) %></p>
-
-<h6>Recorded Transactions</h6>
-
-  <table class="table">
+  <table class="table table-bordered">
   <tr>
     <th>Buy/Sale?</th>
     <th>Quantity</th>
@@ -37,7 +31,6 @@
     <td><%= transaction.buy_sale %></td>
     <td><%= transaction.quantity %></td>
     <td><%= transaction.price_per_unit %></td>
-    <td><%= transaction.purchase_price %></td>
     <td><%= transaction.total_spent %></td>
     <td><%= transaction.total_earned %></td>
     <td><%= transaction.transaction_fees %></td>
@@ -49,5 +42,5 @@
   <% end %>
   </table>
 
-
+  <p><%= link_to 'Add Transaction', new_company_transaction_path(@company) %></p>
 

@@ -1,4 +1,4 @@
-<%= form_with(model: [@company, @transaction]) do |form| %>
+<%= form_with(model: [@company, @transaction], local: true) do |form| %>
   <% if transaction.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
@@ -24,11 +24,6 @@
   <div>
     <%= form.label :price_per_unit, style: "display: block" %>
     <%= form.text_field :price_per_unit %>
-  </div>
-
-  <div>
-    <%= form.label :purchase_price, style: "display: block" %>
-    <%= form.text_field :purchase_price %>
   </div>
 
   <div>
