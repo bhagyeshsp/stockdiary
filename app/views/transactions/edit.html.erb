@@ -5,6 +5,6 @@
 <br>
 
 <div>
-<%= button_to "Destroy this transaction", [@transaction.company, @transaction], method: :delete %>  
+<%= button_to "Destroy this transaction", [@transaction.company, @transaction], method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>  
 <%= link_to "Back to company", company_path(@transaction.company) %>
 </div>
